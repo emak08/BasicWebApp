@@ -32,9 +32,11 @@ public class QueryProcessor {
             String[] words = query.split(" ");
             //int sum  = 0;
             int old = Integer.MIN_VALUE;
+
             for (String word: words){
                 try {
                     int number = Integer.parseInt(word);
+//
                     if(number>old){
                         old = number
                     }
