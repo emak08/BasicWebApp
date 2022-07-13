@@ -13,6 +13,24 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.contains("name")) {
            return "ema";
+        }else if (query.contains("plus")) {
+            //query = what is 7 plus 14
+
+            //here we get a list of strings of words
+            String[] words = query.split(" ");
+            int sum  = 0;
+            for (String word: words){
+                try {
+                    int number = Integer.parseInt(word);
+                    sum += number;
+                }catch (Exception e){
+                    //ignore
+                }
+            }
+            return String.valueOf(sum);
+        }else if (query.contains("largest")) {
+            //
+            return "ema";
         } else { // TODO extend the programm here
            //Add a new comment by ema
             return "";
