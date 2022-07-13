@@ -29,18 +29,16 @@ public class QueryProcessor {
             }
             return String.valueOf(sum);
         }else if (query.contains("largest")) {
+            //or regex query.split("|,")
             query.replace(",", "");
             String[] words = query.split(" ");
             //int sum  = 0;
-            int old = Integer.MIN_VALUE;
+            int max = -1;
 
             for (String word: words){
                 try {
                     int number = Integer.parseInt(word);
-
-                    if(number>old){
-                        old = number
-                    }
+                    max = number > max ? number : max;
                 }catch (Exception e){
                     //ignore
                 }
