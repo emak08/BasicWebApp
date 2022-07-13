@@ -36,7 +36,7 @@ public class QueryProcessor {
             for (String word: words){
                 try {
                     int number = Integer.parseInt(word);
-//
+
                     if(number>old){
                         old = number
                     }
