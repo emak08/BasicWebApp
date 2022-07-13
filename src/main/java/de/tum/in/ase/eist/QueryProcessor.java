@@ -29,8 +29,20 @@ public class QueryProcessor {
             }
             return String.valueOf(sum);
         }else if (query.contains("largest")) {
-            //
-            return "ema";
+            String[] words = query.split(" ");
+            //int sum  = 0;
+            int old = Integer.MIN_VALUE;
+            for (String word: words){
+                try {
+                    int number = Integer.parseInt(word);
+                    if(number>old){
+                        old = number
+                    }
+                }catch (Exception e){
+                    //ignore
+                }
+            }
+            return String.valueOf(old);
         } else { // TODO extend the programm here
            //Add a new comment by ema
             return "";
